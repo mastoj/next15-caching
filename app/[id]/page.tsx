@@ -36,7 +36,7 @@ const getRandomCat = async (revalidationTime: number) => {
         timestamp: string;
       };
     },
-    [revalidationTime.toString()],
+    ["cat-image-" + revalidationTime.toString()],
     {
       revalidate: revalidationTime,
       tags: cacheTags,

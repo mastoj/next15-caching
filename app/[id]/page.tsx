@@ -93,7 +93,7 @@ const CachePage = async ({ params }: Props) => {
         </div>
         <div className="h-[75%]">
           <div className="grid grid-rows-2 w-full gap-2 h-full">
-            {[10, 20].map((revalidationTime) => (
+            {[10, 10].map((revalidationTime) => (
               <CatImage
                 key={revalidationTime}
                 revalidationTime={revalidationTime}

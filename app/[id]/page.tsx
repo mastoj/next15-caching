@@ -7,6 +7,7 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+export const revalidate = 20;
 export const dynamic = "force-static";
 export const generateStaticParams = () => {
   return [];

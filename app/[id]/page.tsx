@@ -51,7 +51,7 @@ const CatImage = async ({ revalidationTime }: { revalidationTime: number }) => {
   return (
     <div className="flex flex-col gap-2 h-full w-full">
       <span>{startTime}</span>
-      <div className="h-[80%] overflow-hidden p-4">
+      <div className="overflow-hidden p-4 h-52">
         <Image
           src={catData.url}
           alt="Cat image"
@@ -81,19 +81,19 @@ const CachePage = async ({ params }: Props) => {
   const { id } = await params;
   console.log("==> Cache page: ", id);
   return (
-    <div className="grid grid-cols-1 gap-2 overflow-hidden justify-center my-auto h-[70%]">
-      <div className="text-2xl font-bold flex flex-row justify-center mt-20">
+    <div className="grid grid-cols-2 auto-rows-auto gap-2 overflow-hidden justify-center h-full max-w-[1200px] mx-auto py-20">
+      <div className="text-2xl font-bold flex flex-row justify-center col-span-2">
         Current time: <Time />
       </div>
-      <div className="grid grid-cols-2 max-w-[800px] mx-auto *:border-2 flex-1 h-[70%]">
-        <div className="flex flex-row justify-center items-center h-[75%]">
+      <div className="col-span-2 grid grid-cols-2 *:border-2 w-full h-full">
+        <div className="flex flex-row justify-center items-center h-full">
           <RevalidateButton tag="cats" type="revalidate-button">
             Revalidate all
           </RevalidateButton>
         </div>
-        <div className="h-[75%]">
-          <div className="grid grid-rows-2 w-full gap-2 h-full">
-            {[10, 10].map((revalidationTime) => (
+        <div className="h-full">
+          <div className="grid grid-rows-2 w-full gap-2 h-full divide-y">
+            {[10, 20].map((revalidationTime) => (
               <CatImage
                 key={revalidationTime}
                 revalidationTime={revalidationTime}

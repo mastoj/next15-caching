@@ -88,7 +88,13 @@ const CachePage = async ({ params }: Props) => {
       </div>
       <div className="col-span-2 grid grid-cols-2 *:border-2 w-full h-full">
         <div className="flex flex-row justify-center items-center h-full">
-          <RevalidateButton tag="cats" type="revalidate-button">
+          <RevalidateButton
+            tag="cats"
+            type="countdown-button"
+            startTime={new Date().toUTCString()}
+            durationInMs={revalidate * 1000}
+            runningText={`Revalidates in ${revalidate}s`}
+          >
             Revalidate all
           </RevalidateButton>
         </div>

@@ -7,7 +7,7 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
-export const revalidate = 30;
+export const revalidate = 60;
 export const dynamic = "force-static";
 export const generateStaticParams = () => {
   return [];
@@ -100,7 +100,7 @@ const CachePage = async ({ params }: Props) => {
         </div>
         <div className="h-full">
           <div className="grid grid-rows-2 w-full gap-2 h-full divide-y">
-            {[10, 20].map((revalidationTime) => (
+            {[25, 45].map((revalidationTime) => (
               <CatImage
                 key={revalidationTime}
                 revalidationTime={revalidationTime}
